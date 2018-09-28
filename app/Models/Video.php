@@ -21,6 +21,7 @@ class Video extends Model
         '1' => 'Khởi động buổi sáng',
         '2' => 'Văn hóa công ty',
         '3' => 'Các video chia sẻ/đào tạo',
+        '4' => 'Bản tin nội bộ',
     ];
 
     protected $table = 'video';

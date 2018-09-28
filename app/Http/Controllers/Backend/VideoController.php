@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -67,13 +67,16 @@ class VideoController extends Controller
      */
     public function createPort(Request $request)
     {
+
         $image_file = $request->link_image;
+
         if (strlen($image_file) > 0) {
             $filename = time() . $image_file->getClientOriginalName();
             $diryear = 'public/uploads/';
             $dir = 'public/uploads/';
             if (file_exists($diryear) && is_dir($diryear)) {
                 if (!file_exists($dir) && !is_dir($dir)) {
+                    die('sss');
                     mkdir($dir, 0777, true);
                 }
             } else {

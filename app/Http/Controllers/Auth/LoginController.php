@@ -40,6 +40,7 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request) {
+        die(123);
         Auth::logout();
         return redirect('/login');
     }

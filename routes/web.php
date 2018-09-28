@@ -91,3 +91,4 @@ Route::get('/bai-viet', 'Frontend\\NewsController@index');
 Route::get('/chi-tiet-bai-viet/{id}', 'Frontend\\NewsController@detail');
 
 
+

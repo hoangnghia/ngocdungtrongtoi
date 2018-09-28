@@ -1,0 +1,155 @@
+.intro-2 {
+    background: url("../img/bg/section-1.png")no-repeat center center;
+    background-size: cover;
+}
+
+#employees_feeling {
+    background: url("../img/bg/section-2.png")no-repeat center center;
+    background-size: cover;
+    padding: 3rem 0;
+}
+
+.top-nav-collapse {
+    /*background-color: #9da4b1 !important;*/
+    background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+    background: -o-linear-gradient(50deg,#45cafc,#303f9f)!important;
+    background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+}
+
+.navbar:not(.top-nav-collapse) {
+    // background: transparent !important;
+    // background:#fff !important;
+    background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+    background: -o-linear-gradient(50deg,#45cafc,#303f9f)!important;
+    background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+}
+
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        /*background: #9da4b1 !important;*/
+        background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+        background: -o-linear-gradient(50deg,#45cafc,#303f9f)!important;
+        background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+    }
+}
+
+.rgba-gradient {
+    background: -webkit-linear-gradient(45deg, rgba(83, 125, 210, 0.4), rgba(178, 30, 123, 0.4) 100%);
+    background: -webkit-gradient(linear, 45deg, from(rgba(29, 236, 197, 0.4)), to(rgba(96, 0, 136, 0.4)));
+    background: linear-gradient(to 45deg, rgba(29, 236, 197, 0.4), rgba(96, 0, 136, 0.4) 100%);
+}
+
+.nd-text-main {
+    color: #003f8b !important;
+}
+
+.card {
+    background-color: rgba(229, 228, 255, 0.2);
+}
+
+body {
+    background-color: #fff;
+}
+
+h6 {
+    line-height: 1.7;
+}
+
+.section-title {
+    margin-top:0 !important;
+    font-size: 2em !important;   
+}
+
+html,
+body {
+    height: 100%;
+}
+
+@media (max-width: 740px) {
+    html,
+    body {
+        height: 1040px;
+    }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+    html,
+    body {
+        height: 600px;
+    }
+}
+
+/*============================================================================
+******************************** DESKTOP *************************************
+=============================================================================*/
+
+/*  Main Navigation
+=========================*/
+#centerNavbarND {
+    .navbar-nav {
+        .nav-link {
+            text-transform:uppercase;
+            max-width:108px;
+            text-align:center;
+            margin: 0 15px;
+            color:#fff;
+        }
+    }
+}
+
+.top-nav-collapse #centerNavbarND {
+    .navbar-brand {
+        display: none !important; 
+    }
+
+    .navbar-nav {
+        .nav-link {
+            max-width:100%;
+            margin: 0 10px;
+            color:#fff;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    #centerNavbarND {
+        .navbar-brand {
+            display: none !important; 
+        }
+
+        .navbar-nav {
+            .nav-link {
+                max-width:100%;
+            }
+        }
+    }
+}
+
+
+/*  Header Section
+=========================*/
+#main-header,
+#main-header-section.view {
+    height: 100%;
+}
+
+@media (max-width: 740px) {
+    #main-header,
+    #main-header-section.view {
+        height: 1040px;
+    }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+    #main-header,
+    #main-header-section.view {
+        height: 600px;
+    }
+}
+
+
+/*  Hoạt động Section
+=========================*/
+#gallery_dosthing {
+    .nav.nav-tabs.md-tabs {
+
+    }
+}

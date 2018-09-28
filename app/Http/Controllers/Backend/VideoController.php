@@ -83,9 +83,8 @@ class VideoController extends Controller
                 mkdir($diryear, 0777, true);
             }
             $destinationPath = $dir . '/' . $filename;
-            Image::make($image_file->getRealPath())->save($destinationPath);
+            Image::make($image_file->getRealPath())->resize(350, 230)->save($destinationPath);
             $id = Auth::user()->id;
-
             $video = new Video();
             $video->title = $request->title;
             $video->description = $request->description;

@@ -113,7 +113,7 @@ class AlbumController extends Controller
                 mkdir($diryear, 0777, true);
             }
             $destinationPath = $dir . '/' . $filename;
-            Image::make($image_file->getRealPath())->save($destinationPath);
+            Image::make($image_file->getRealPath())->resize(350, 230)->save($destinationPath);
         }
         if (count($sv_file) == count($sv_text) && count($sv_file) != 0) {
             foreach ($sv_file as $key => $sv_image) {
@@ -129,7 +129,7 @@ class AlbumController extends Controller
                         mkdir($diryear, 0777, true);
                     }
                     $destinationPath = $dir . '/' . $filename;
-                    Image::make($sv_image->getRealPath())->save($destinationPath);
+                    Image::make($sv_image->getRealPath())->resize(640, 430)->save($destinationPath);
                     $post_image = new Album_image();
                     $post_image->post_id = $postId;
                     $post_image->image_url = $filename;

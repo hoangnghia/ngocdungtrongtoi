@@ -95,7 +95,7 @@ class NewsController extends Controller
                 mkdir($diryear, 0777, true);
             }
             $destinationPath = $dir . '/' . $filename;
-            Image::make($image_file->getRealPath())->save($destinationPath);
+            Image::make($image_file->getRealPath())->resize(350, 230)->save($destinationPath);
         }
         Session::flash('flash_message', "Thêm bài viết thành công");
         return $this->index();

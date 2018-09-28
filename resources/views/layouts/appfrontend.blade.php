@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <!--  Required meta tags always come first  -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -15,6 +16,9 @@
     <!-- Custom styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/mdb/css/initcarousel.css') }}">
+    <!-- Custom styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick/slick.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick/slick-theme.css')}}">
     @yield('styles')
 </head>
 <body>
@@ -85,6 +89,7 @@
 <!--  SCRIPTS  -->
 <!-- JQuery -->
 <script type="text/javascript" src="{{ asset('assets/mdb/js/jquery-3.2.1.min.js')}}"></script>
+
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="{{ asset('assets/mdb/js/popper.min.js')}}"></script>
 <!-- Bootstrap core JavaScript -->
@@ -94,14 +99,24 @@
 <!-- Theme JavaScript -->
 <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
 
-{{--<script type='text/javascript' src='https://amazingcarousel.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>--}}
-<script type='text/javascript' src='{{ asset('assets/mdb/js/jquery-migrate.min.js') }}/'></script>
+<script type='text/javascript' src='https://amazingcarousel.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+{{--<script type='text/javascript' src='{{ asset('assets/mdb/js/jquery-migrate.min.js') }}/'></script>--}}
 <script type='text/javascript' src='{{ asset('assets/mdb/js/amazingcarousel.js') }}'></script>
-<script type='text/javascript' src='{{ asset('assets/mdb/js/wonderpluginlightbox.js') }}'></script>
-<script src="{{ asset('assets/mdb/js/initcarousel.js') }}"></script>
+{{--<script type='text/javascript' src='{{ asset('assets/mdb/js/wonderpluginlightbox.js') }}'></script>--}}
+{{--<script src="{{ asset('assets/mdb/js/initcarousel.js') }}"></script>--}}
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="{{ asset('assets/slick/slick/slick.js') }}" type="text/javascript" charset="utf-8"></script>
 @yield('extra_scripts')
 <script>
     new WOW().init();
+    $(document).on('ready', function() {
+        $("#panel_hinhanhhoatdong .slick-action, #panel_videohoatdong .slick-action").slick({
+            dots: true,
+            centerMode: true,
+            slidesToShow: 3,
+            slidesToScroll: 1
+        });
+    });
 </script>
 </body>
 </html>

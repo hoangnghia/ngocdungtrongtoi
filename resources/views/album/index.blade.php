@@ -9,7 +9,7 @@
                         <span class="glyphicon glyphicon-home"></span>
                     </a>
                 </li>
-                <li class="crumb-trail">Danh sách bài viết</li>
+                <li class="crumb-trail">Danh sách hình ảnh</li>
             </ol>
         </div>
         <div class="x_panel">
@@ -29,9 +29,7 @@
                 <h2>Danh sách bài viết</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li class="dropdown">
-                        <a  class="btn btn-primary" href="{{url('/album/create')}}" >Thêm bài viết</a>
-                        {{--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Thêm bài viết--}}
-                        {{--</button>--}}
+                        <a class="btn btn-primary" href="{{url('/album/create')}}">Thêm hình ảnh</a>
                     </li>
                 </ul>
                 <div class="clearfix"></div>
@@ -47,9 +45,6 @@
                             <th class="column-title">Tiêu đề</th>
                             <th class="column-title">Miêu tả</th>
                             <th class="column-title">Người tạo</th>
-                            {{--<th class="column-title">Nội dung</th>--}}
-                            {{--<th class="column-title">Hình ảnh đại diện</th>--}}
-                            {{--<th class="column-title">Loại</th>--}}
                             <th class="column-title">Ngày tạo</th>
                             <th class="column-title">Trạng thái</th>
                             <th class="column-title">Tùy chỉnh</th>
@@ -63,7 +58,7 @@
         </div>
     </div>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $("#datatablebranch").dataTable({
                 processing: true,
                 serverSide: true,
@@ -71,29 +66,23 @@
                 "columns": [
                     {
                         data: 'id', name: 'id', render: function (data) {
-                            return '  <input type="checkbox" class="flat" value="'+data+'" name="table_records">';
+                            return '  <input type="checkbox" class="flat" value="' + data + '" name="table_records">';
                         }
                     },
                     {data: 'title', name: 'title'},
                     {data: 'description', name: 'description'},
                     {data: 'username', name: 'username'},
-                    // {
-                    //     data: 'type', name: 'type', render: function (data) {
-                    //         return data != null ? '<span style="color:green;"">'+data+'</span>' : '<span style="color:green" >Không có</span>'
-                    //     }
-                    // },
                     {data: 'created_at', name: 'created_at'},
                     {
-                        data: 'status',  name: 'status', render: function (data) {
+                        data: 'status', name: 'status', render: function (data) {
                             return data == 1 ? '<span style="color:green;"">Active</span>' : '<span style="color:red;" >No active</span>'
                         }
                     },
                     {
-                        data: 'id',  name: 'option', render: function (data) {
-                            return '<ul class="nav navbar-right panel_toolbox"><li class="dropdown"><a href="/post/edit/' + data + '" class="dropdown-toggle" ><i class="fa fa-wrench"></i></a></li><li><a href="/post/delete/'+ data +'" class="close-link" value="'+data+'"><i class="fa fa-close"></i></a></li>'
+                        data: 'id', name: 'option', render: function (data) {
+                            return '<ul class="nav navbar-right panel_toolbox"><li class="dropdown"><a href="/album/edit/' + data + '" class="dropdown-toggle" ><i class="fa fa-wrench"></i></a></li><li><a href="/album/delete/' + data + '" class="close-link" value="' + data + '"><i class="fa fa-close"></i></a></li>'
                         }
                     }
-
                 ]
             });
         });

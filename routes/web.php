@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('login');
+    return redirect('index');
 });
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/redirect/{social}', 'Auth\\SocialAuthController@redirect');
@@ -22,59 +22,72 @@ Route::get('/callback/{social}', 'Auth\\SocialAuthController@callback');
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/profile', 'Auth\\ProfileController@index');
 
-    Route::get('/branches','Dashboard\\BranchController@index');
-    Route::get('/branch/edit/{id}','Dashboard\\BranchController@editBranch');
-    Route::get('/branch/delete/{id}','Dashboard\\BranchController@delete');
-    Route::get('getArrayData','Dashboard\\BranchController@getArrayData');
+    Route::get('/branches', 'Backend\\BranchController@index');
+    Route::get('/branch/edit/{id}', 'Backend\\BranchController@editBranch');
+    Route::get('/branch/delete/{id}', 'Backend\\BranchController@delete');
+    Route::get('getArrayData', 'Backend\\BranchController@getArrayData');
 
-    Route::post('/edit/BranchPost','Dashboard\\BranchController@editBranchPost');
-    Route::post('/branchespost','Dashboard\\BranchController@createBranch');
+    Route::post('/edit/BranchPost', 'Backend\\BranchController@editBranchPost');
+    Route::post('/branchespost', 'Backend\\BranchController@createBranch');
 
     // Route phòng ban
 
-    Route::get('/room','Dashboard\\RoomController@index');
-    Route::get('/room/getArrayData','Dashboard\\RoomController@getArrayData');
-    Route::get('/room/edit/{id}','Dashboard\\RoomController@editRoom');
-    Route::get('/room/delete/{id}','Dashboard\\RoomController@delete');
+    Route::get('/room', 'Backend\\RoomController@index');
+    Route::get('/room/getArrayData', 'Backend\\RoomController@getArrayData');
+    Route::get('/room/edit/{id}', 'Backend\\RoomController@editRoom');
+    Route::get('/room/delete/{id}', 'Backend\\RoomController@delete');
 
-    Route::post('/room/create','Dashboard\\RoomController@createRoom');
-    Route::post('/edit/roompost','Dashboard\\RoomController@editRoomPost');
+    Route::post('/room/create', 'Backend\\RoomController@createRoom');
+    Route::post('/edit/roompost', 'Backend\\RoomController@editRoomPost');
 
     //Router hình ảnh
 
-    Route::get('/album','Dashboard\\AlbumController@index');
-    Route::get('/album/getArrayData','Dashboard\\AlbumController@getArrayData');
-    Route::get('/album/create','Dashboard\\AlbumController@create');
-    Route::get('/album/delete/{id}','Dashboard\\AlbumController@delete');
+    Route::get('/album', 'Backend\\AlbumController@index');
+    Route::get('/album/getArrayData', 'Backend\\AlbumController@getArrayData');
+    Route::get('/album/create', 'Backend\\AlbumController@create');
+    Route::get('/album/delete/{id}', 'Backend\\AlbumController@delete');
 
-    Route::post('/album/createPort','Dashboard\\AlbumController@createPort');
+    Route::post('/album/createPort', 'Backend\\AlbumController@createPort');
 
     //Router video
 
-    Route::get('/video','Dashboard\\VideoController@index');
-    Route::get('/video/getArrayData','Dashboard\\VideoController@getArrayData');
-    Route::get('/video/create','Dashboard\\VideoController@create');
-    Route::get('/video/delete/{id}','Dashboard\\VideoController@delete');
-    Route::get('/video/edit/{id}','Dashboard\\VideoController@editVideo');
+    Route::get('/video', 'Backend\\VideoController@index');
+    Route::get('/video/getArrayData', 'Backend\\VideoController@getArrayData');
+    Route::get('/video/create', 'Backend\\VideoController@create');
+    Route::get('/video/delete/{id}', 'Backend\\VideoController@delete');
+    Route::get('/video/edit/{id}', 'Backend\\VideoController@editVideo');
 
-    Route::post('/video/createPort','Dashboard\\VideoController@createPort');
-    Route::post('/video/editpost','Dashboard\\VideoController@editVideoPost');
-
-    //Router Bài viết
-
-    Route::get('/news','Dashboard\\NewsController@index');
-    Route::get('/news/getArrayData','Dashboard\\NewsController@getArrayData');
-    Route::get('/news/create','Dashboard\\NewsController@create');
-    Route::get('/news/delete/{id}','Dashboard\\NewsController@delete');
-    Route::get('/news/edit/{id}','Dashboard\\NewsController@editNews');
-
-    Route::post('/news/createPort','Dashboard\\NewsController@createPort');
-    Route::post('/news/editpost','Dashboard\\NewsController@editNewsPost');
+    Route::post('/video/createPort', 'Backend\\VideoController@createPort');
+    Route::post('/video/editpost', 'Backend\\VideoController@editVideoPost');
 
     //Router Bài viết
-    Route::get('/profile','Auth\\ProfileController@index');
 
+    Route::get('/news', 'Backend\\NewsController@index');
+    Route::get('/news/getArrayData', 'Backend\\NewsController@getArrayData');
+    Route::get('/news/create', 'Backend\\NewsController@create');
+    Route::get('/news/delete/{id}', 'Backend\\NewsController@delete');
+    Route::get('/news/edit/{id}', 'Backend\\NewsController@editNews');
+
+    Route::post('/news/createPort', 'Backend\\NewsController@createPort');
+    Route::post('/news/editpost', 'Backend\\NewsController@editNewsPost');
 
 });
 /** BRANCH */
+//Route Frontend
+
+Route::get('/index', 'Frontend\\HomeController@index');
+Route::post('/image/get', 'Frontend\\HomeController@getiImagesByAlbum');
+
+
+Route::get('/albums', 'Frontend\\ImageByAlbumController@index');
+
+Route::get('/videos', 'Frontend\\GetByVideosController@index');
+Route::get('/chi-tiet-video/{id}', 'Frontend\\GetByVideosController@detail');
+
+
+Route::get('/bai-viet', 'Frontend\\NewsController@index');
+Route::get('/chi-tiet-bai-viet/{id}', 'Frontend\\NewsController@detail');
+
+

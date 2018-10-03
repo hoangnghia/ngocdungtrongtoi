@@ -40,7 +40,7 @@
                 <!-- Links -->
                 <ul class="navbar-nav">
                     <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link" href="" data-offset="60">Văn hóa ngọc dung</a>
+                        <a class="nav-link" href="/van-hoa-ngoc-dung" data-offset="60">Văn hóa ngọc dung</a>
                     </li>
                     <li class="nav-item align-items-center d-flex">
                         <a class="nav-link" href="/albums" data-offset="60">Hình ảnh hoạt động</a>
@@ -78,7 +78,7 @@
 <!-- Main Navigation -->
 
 <!-- Main Layout -->
-<main>
+<main id="main-head-content">
     @yield('content')
 </main>
 <!-- Main Layout -->

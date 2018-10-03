@@ -73,6 +73,24 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/news/createPort', 'Backend\\NewsController@createPort');
     Route::post('/news/editpost', 'Backend\\NewsController@editNewsPost');
 
+    // rout Cảm nhận
+    Route::get('/feel', 'Backend\\FeelController@index');
+    Route::get('/feel/getArrayData', 'Backend\\FeelController@getArrayData');
+    Route::get('/feel/create', 'Backend\\FeelController@create');
+    Route::get('/feel/delete/{id}', 'Backend\\FeelController@delete');
+    Route::get('/feel/edit/{id}', 'Backend\\FeelController@editNews');
+
+    Route::post('/feel/createPort', 'Backend\\FeelController@createFeel');
+    Route::post('/feel/editpost', 'Backend\\FeelController@editNewsPost');
+
+    // rout Cảm nhận
+    Route::get('/culture', 'Backend\\CultureController@index');
+    Route::get('/culture/getArrayData', 'Backend\\CultureController@getArrayData');
+    Route::get('/culture/create', 'Backend\\CultureController@create');
+    Route::get('/culture/delete/{id}', 'Backend\\CultureController@delete');
+
+    Route::post('/culture/createCulture', 'Backend\\CultureController@createCulture');
+
 });
 /** BRANCH */
 //Route Frontend
@@ -82,6 +100,7 @@ Route::post('/image/get', 'Frontend\\HomeController@getiImagesByAlbum');
 
 
 Route::get('/albums', 'Frontend\\ImageByAlbumController@index');
+Route::get('/van-hoa-ngoc-dung', 'Frontend\\CultureController@index');
 
 Route::get('/videos', 'Frontend\\GetByVideosController@index');
 Route::get('/chi-tiet-video/{id}', 'Frontend\\GetByVideosController@detail');

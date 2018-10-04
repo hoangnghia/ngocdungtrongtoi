@@ -123,9 +123,10 @@
                     return false;
                 }
 
-                var new_sv_box = $(document.createElement('div')).attr("id", "sv_box_" + counter).addClass("w3-row-padding sv_image w3-panel w3-border-top w3-border-bottom w3-border-green");
+                var new_sv_box = $(document.createElement('div')).attr("id", "sv_box_" + counter).addClass("w3-row-padding sv_image w3-panel w3-border-top w3-border-bottom w3-border-green row");
 
-                new_sv_box.after().html("<div class='w3-half'><label for=''>Ảnh đại diện</label><input class='w3-input' type='file' name='img_sv_box[]' id='img_sv_box_"+counter+"' ></div><div class='w3-half'><label for='text_sv_box_"+counter+"'>Tên Dịch Vụ</label><input class='w3-input' type='text' name='text_sv_box[]' id='text_sv_box_"+counter+"'></div>");
+                // new_sv_box.after().html("<div class='w3-half'><label for=''>Ảnh đại diện</label><input class='w3-input' type='file' name='img_sv_box[]' id='img_sv_box_"+counter+"' ></div><div class='w3-half'><label for='text_sv_box_"+counter+"'>Tên Dịch Vụ</label><input class='w3-input' type='text' name='text_sv_box[]' id='text_sv_box_"+counter+"'></div>");
+                new_sv_box.after().html("<div class='w3-half col-md-6 col-sm-6 col-xs-12'><label for=''>Ảnh đại diện</label><input class='w3-input ' type='file' name='img_sv_box[]' id='img_sv_box_"+counter+"' ></div><div class='w3-half col-md-6 col-sm-6 col-xs-12'><label for='text_sv_box_"+counter+"'>Tên Dịch Vụ</label><input class='w3-input form-control' type='text' name='text_sv_box[]' id='text_sv_box_"+counter+"'></div>");
 
                 new_sv_box.appendTo("#sv_box_group");
 

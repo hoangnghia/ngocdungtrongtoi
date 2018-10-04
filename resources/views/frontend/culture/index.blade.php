@@ -38,7 +38,7 @@
                             <div class="container value" id="value">
                                 @foreach($culture as $item)
                                @if($item->type == 1)
-                                <div class="intro_value" style="background: url('http://127.0.0.1:8000/public/uploads/{{$item->image_url}}');background-repeat: no-repeat;background-size: 100% 100%;">
+                                <div class="intro_value" style="background: url('http://ngocdungtrongtoi.com/public/uploads/{{$item->image_url}}');background-repeat: no-repeat;background-size: 100% 100%;">
                                     <h2>{{$item->title}}</h2>
                                 </div>
                                 <div class="content_value">
@@ -60,7 +60,7 @@
                             <div class="container value" id="value">
                                 @foreach($culture as $item)
                                     @if($item->type == 2)
-                                        <div class="intro_value" style="background: url('http://127.0.0.1:8000/public/uploads/{{$item->image_url}}');background-repeat: no-repeat;background-size: 100% 100%;">
+                                        <div class="intro_value" style="background: url('http://ngocdungtrongtoi.com/public/uploads/{{$item->image_url}}');background-repeat: no-repeat;background-size: 100% 100%;">
                                             <h2>{{$item->title}}</h2>
                                         </div>
                                         <div class="content_value">
@@ -82,7 +82,7 @@
                             @foreach($culture as $item)
                                 @if($item->type == 3)
                             <div class="img_vision">
-                                <img src="http://127.0.0.1:8000/public/uploads/{{$item->image_url}}" alt="Tầm nhìn - Sứ mệnh">
+                                <img src="http://ngocdungtrongtoi.com/public/uploads/{{$item->image_url}}" alt="Tầm nhìn - Sứ mệnh">
                             </div>
                             <div class="content_vision">
                                 <div class="title_vision">

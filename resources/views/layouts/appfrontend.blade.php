@@ -62,9 +62,9 @@
                     <li class="nav-item align-items-center d-flex">
                         <a class="nav-link" href="/bai-viet" data-offset="60">Bản tin nội bộ</a>
                     </li>
-                    <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link" href="#contact" data-offset="60">Liên hệ</a>
-                    </li>
+                    {{--<li class="nav-item align-items-center d-flex">--}}
+                        {{--<a class="nav-link" href="#contact" data-offset="60">Liên hệ</a>--}}
+                    {{--</li>--}}
                 </ul>
                 <!-- Links -->
             </div>

@@ -98,7 +98,6 @@ Route::group(['middleware' => 'web'], function () {
 Route::get('/index', 'Frontend\\HomeController@index');
 Route::post('/image/get', 'Frontend\\HomeController@getiImagesByAlbum');
 
-
 Route::get('/albums', 'Frontend\\ImageByAlbumController@index');
 Route::get('/van-hoa-ngoc-dung', 'Frontend\\CultureController@index');
 

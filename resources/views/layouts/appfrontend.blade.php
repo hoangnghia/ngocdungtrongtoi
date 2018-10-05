@@ -52,7 +52,7 @@
                 <!-- Links -->
                 <!-- Navbar brand -->
                 <a class="navbar-brand px-lg-4 mr-0" href="/">
-                    <img src="assets/img/logo.png" height="70" alt="">
+                    <img src="{{asset('assets/img/logo.png')}}" height="70" alt="">
                 </a>
                 <!-- Links -->
                 <ul class="navbar-nav">

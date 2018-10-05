@@ -3,7 +3,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/css/customstyle.css') }}">
 @endsection
 @section('content')
-    <section>
+    <section id="video-detail">
         {{--<div class="container">--}}
             {{--<div class="txt_about_us">--}}
                 {{--<h2>VIDEO</h2>--}}

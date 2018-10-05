@@ -111,6 +111,7 @@
                             @endif
                             @endforeach
                         </div>
+
                     </div>
                     <!--/.Panel 2-->
                 </div>

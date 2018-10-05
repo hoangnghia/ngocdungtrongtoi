@@ -31,6 +31,7 @@
                             </div>
                         @endforeach
                     </div>
+                    {{ $album->links()}}
                 </div>
             </div>
         </div>

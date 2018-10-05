@@ -17,10 +17,14 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::orderByRaw('created_at DESC')->get();
+        $news = News::orderByRaw('created_at DESC')->paginate(10);
         return view('frontend/news/index', ['news' => $news]);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function detail($id)
     {
         $newsdetail = News::where('id',$id)->first();

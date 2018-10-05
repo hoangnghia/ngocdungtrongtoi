@@ -16,7 +16,7 @@ class ImageByAlbumController extends Controller
 {
     public function index()
     {
-        $image = Album::all();
+        $image = Album::orderByRaw('created_at DESC')->paginate(10);
         return view('frontend/album/index', ['album' => $image]);
     }
 

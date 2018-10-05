@@ -16,7 +16,7 @@ class GetByVideosController extends Controller
 {
     public function index()
     {
-        $video = Video::all();
+        $video = Video::orderByRaw('created_at DESC')->paginate(10);
         return view('frontend/video/index', ['video' => $video]);
     }
 

@@ -64,7 +64,7 @@
     </section>
 @endsection
 @section('extra_scripts')
-    <script type="text/javascript" src="{{ asset('assets/jssor.slider.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jssor.slider.min.js')}}"></script>
     <script>
         var options = {$AutoPlay: 1};
         var jssor_1_slider = new $JssorSlider$("jssor_1", options);

@@ -11,6 +11,7 @@
                     <p>{{$news->description}}</p>
                     <div class="content">
                         {!!$news->content!!}
+                        
 
                         <h4 class="tac-gia">Phước Lợi</h4>
                         <h5 class="thoi-gian"> {{$news->created_at}}</h5>

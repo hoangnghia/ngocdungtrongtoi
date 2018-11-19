@@ -33,13 +33,13 @@
                                                     <a href="/videos/detail/{{$item->id}}">
                                                         <div class="amazingcarousel-item-container"
                                                              style="position: relative; margin: 0px 2px;">
-                                                            <div class="amazingcarousel-image">
+                                                            <div class="amazingcarousel-image image-slider-bottom">
                                                                 <div class="html5lightbox modal_class"
                                                                      id="{{$item->id}}"
                                                                      data-toggle="modal"
                                                                      data-target="#modalimages">
-                                                                    <img src="\public\uploads\{{$item->img_url}}"
-                                                                         alt="Golden Wheat Field"
+                                                                    <img src="\public\uploads\{{$item->image_url}}"
+                                                                         alt="Ngọc Dung"
                                                                          style="visibility: visible;">
                                                                 </div>
                                                             </div>
@@ -65,7 +65,7 @@
     </section>
 @endsection
 @section('extra_scripts')
-    <script src="jssor.slider.min.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jssor.slider.min.js')}}"></script>
     <script>
         var options = {$AutoPlay: 1};
         var jssor_1_slider = new $JssorSlider$("jssor_1", options);

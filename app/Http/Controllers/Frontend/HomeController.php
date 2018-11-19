@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Album;
 use App\Models\Album_image;
+use App\Models\Feels;
 use App\Models\News;
 use App\Models\Video;
 use Carbon\Carbon;
@@ -22,7 +23,8 @@ class HomeController extends Controller
         $image = Album::all();
         $listvideo = Video::all();
         $news = News::all();
-        return view('frontend/home/index', ['video' => $video, 'album' => $image,'listvideo'=>$listvideo,'news' =>$news]);
+        $feel= Feels::all();
+        return view('frontend/home/index', ['video' => $video, 'album' => $image,'listvideo'=>$listvideo,'news' =>$news,'feel' =>$feel]);
     }
 
     public function getiImagesByAlbum(Request $request)

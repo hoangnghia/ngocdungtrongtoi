@@ -13,32 +13,36 @@
                 </ol>
                 <!--/.Indicators-->
                 <!--Slides-->
-                <div class="carousel-inner" role="listbox">
+                <div class="carousel-inner top" role="listbox">
                     <!--First slide-->
                     @foreach($video as $item)
                         <div class="carousel-item {{ $loop->first ? ' active' : '' }}"
                              style="background-image: url('{{ asset('public/uploads/section-1.png')}}');">
                             <!--Mask-->
+                            <h1 class="secton-title-top">BẢNG TIN NỘI BỘ</h1>
                             <div class="view">
-                                <div class="full-bg-img flex-center mask rgba-indigo-light black-text">
-                                    <ul class="animated fadeInUp col-lg-5 col-md-12 list-unstyled list-inline text-left">
-                                        <li>
-                                            <h1 class="nd-text-main text-uppercase">{{$item->title}}</h1>
-                                        </li>
-                                        <li>
-                                            <p class="text-uppercase py-4">{{$item->description}}</p>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a target="_blank" href="#"
-                                               class="btn btn-lg blue-gradient btn-rounded font-weight-bold waves-effect waves-light ml-0">Xem
-                                                thêm</a>
-                                        </li>
-                                    </ul>
-                                    <div class="col-lg-6 col-md-12 animated fadeInUp">
-                                        <div class="embed-responsive embed-responsive-4by3 z-depth-2">
-                                            <iframe class="embed-responsive-item"
-                                                    src="https://www.youtube.com/embed/{{$item->url_video}}"
-                                                    style="height: 101%" allowfullscreen></iframe>
+                                <div class="full-bg-img flex-center mask  black-text container">
+                                    <div class="row">
+                                        <ul class="animated fadeInUp col-lg-6 col-md-12 list-unstyled list-inline text-left">
+                                            <li>
+                                                <h1 class="nd-text-main text-uppercase">{{$out = strlen($item->title) > 200 ? substr($item->title,0,200)."..." : $item->title}}</h1>
+                                            </li>
+                                            <li>
+                                                <p class="text-uppercase py-4">{{$out = strlen($item->description) > 500 ? substr($item->description,0,500)."..." : $item->description}}</p>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a target="_blank" href="#"
+                                                   class="btn btn-lg blue-gradient btn-rounded font-weight-bold waves-effect waves-light ml-0">Xem
+                                                    thêm</a>
+                                            </li>
+                                        </ul>
+                                        <div class="col-lg-6 col-md-12 animated fadeInUp">
+                                            <div class="embed-responsive embed-responsive-4by3 z-depth-2">
+                                                {{--<iframe class="embed-responsive-item"--}}
+                                                        {{--src="https://www.youtube.com/embed/{{$item->url_video}}"--}}
+                                                        {{--style="height: 100%" allowfullscreen></iframe>--}}
+                                                <iframe width="450" height="250" src="https://www.youtube.com/embed/{{$item->url_video}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -90,9 +94,9 @@
                                             <a><img class="img-fluid z-depth-1"
                                                     src="\public\uploads\{{$item->image_url}}" alt="video"></a>
 
-                                            <h5 class="mt-3 font-weight-bold text-uppercase">
-                                                <span>{{$out = strlen($item->title) > 50 ? substr($item->title,0,50)."..." : $item->title}}</span>
-                                            </h5>
+                                            <h6 class="mt-3 font-weight-bold text-uppercase">
+                                                <span>{{$out = strlen($item->title) > 100 ? substr($item->title,0,100)."..." : $item->title}}</span>
+                                            </h6>
 
                                         </div>
                                         <!-- Grid column -->
@@ -199,7 +203,7 @@
                                             <a><img class="img-fluid z-depth-1" src="\public\uploads\{{$item->img_url}}"
                                                     alt="video"></a>
                                             <h5 class="mt-3 font-weight-bold text-uppercase">
-                                                <span>{{$out = strlen($item->title) > 50 ? substr($item->title,0,50)."..." : $item->title}}</span>
+                                                <span>{{$out = strlen($item->title) > 100 ? substr($item->title,0,100)."..." : $item->title}}</span>
                                             </h5>
                                         </div>
                                     @endforeach
@@ -274,20 +278,20 @@
              data-ride="carousel" data-interval="false">
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
-            {{--@foreach($video as $item)--}}
+            @foreach($feel as $item)
             <!--First slide-->
-                <div class="carousel-item active">
+                <div class="carousel-item {{ $loop->first ? ' active' : '' }}">
                     <div class="testimonial">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-3 col-xl-3">
                                     <!--Avatar-->
                                     <div class="avatar mx-auto mb-4">
-                                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
+                                        <img src="\public\uploads\{{$item->image_url}}"
                                              class="rounded-circle img-fluid" alt="First sample avatar image">
                                     </div>
-                                    <h4 class="font-weight-bold nd-text-main">Anna Deynah</h4>
-                                    <h6 class="font-weight-bold nd-text-main my-3">Founder at ET Company</h6>
+                                    <h4 class="font-weight-bold nd-text-main">{{$item->name}}</h4>
+                                    <h6 class="font-weight-bold nd-text-main my-3">{{$item->title}}</h6>
                                     <!--Review-->
                                     <div class="orange-text">
                                         <i class="fa fa-star"> </i>
@@ -300,20 +304,16 @@
                                 <div class="col-lg-9 col-xl-9">
                                     <!--Content-->
                                     <p class="text-white">
-                                        <i class="fa fa-quote-left"></i> Ngày 08/08/2018 Dạ tiệc Phượng Hoàng được tỗ
-                                        chức tại Gem Center đã thành công mỹ mãn, đánh dấu bước phát triển mạnh mẽ của
-                                        Thẩm mỹ viện Ngọc Dung, ... Ngày 08/08/2018 Dạ tiệc Phượng Hoàng được tỗ chức
-                                        tại Gem Center đã thành công mỹ mãn, đánh dấu bước phát triển mạnh mẽ của Thẩm
-                                        mỹ viện Ngọc Dung, ... .
+                                        <i class="fa fa-quote-left"></i>{{$item->description}}
                                     </p>
-
+                                    <a class="btn btn-primary" href="/chi-tiet-bai-viet/{{$item->id}}">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--First slide-->
-                {{--@endforeach--}}
+                @endforeach
             </div>
             <!--Slides-->
             <!--Controls-->
@@ -339,23 +339,23 @@
             <!--Section heading-->
             <h2 class="btn blue-gradient btn-rounded font-weight-bold waves-effect waves-light section-title text-center my-5 h1-responsive">
                 Bản tin nội bộ</h2>
-
             <!--Grid row-->
             <div class="row">
             @foreach($news as $item)
                 <!--Grid column-->
                     <div class="col-lg-4 col-md-12 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay z-depth-1 mb-2">
-                            <img src="\public\uploads\{{$item->image_url}}" class="img-fluid" alt="First sample image">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!--Excerpt-->
-                        <h4 class="font-weight-bold mb-3">{{$item->title}}</h4>
-                        <p>{{$out = strlen($item->description) > 100 ? substr($item->description,0,100)."..." : $item->description}}</p>
+                       <div class="news-item">
+                           <!--Featured image-->
+                           <div class="view overlay z-depth-1 mb-2">
+                               <img src="\public\uploads\{{$item->image_url}}" class="img-fluid" alt="First sample image">
+                               <a>
+                                   <div class="mask rgba-white-slight"></div>
+                               </a>
+                           </div>
+                           <!--Excerpt-->
+                           <h6 class="font-weight-bold mb-3">{{$out = strlen($item->title) > 100 ? substr($item->title,0,100)."..." : $item->title}}</h6>
+                           <p>{{$out = strlen($item->description) > 200 ? substr($item->description,0,200)."..." : $item->description}}</p>
+                       </div>
                         <a class="btn btn-primary" href="/chi-tiet-bai-viet/{{$item->id}}">Xem thêm</a>
                     </div>
                     <!--Grid column-->
@@ -366,7 +366,6 @@
 
     </section>
     <!-- Section: Features v.1 -->
-
 @endsection
 @section('extra_scripts')
     <script>

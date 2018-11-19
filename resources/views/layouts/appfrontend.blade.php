@@ -8,14 +8,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Ngọc Dung Trong Tôi</title>
     <!--  Font Awesome  -->
-    <link rel="stylesheet" href="{{ asset('assets/mdb/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/mdbnd/font-awesome-4.7.0/css/font-awesome.min.css')}}">
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('assets/mdb/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/mdbnd/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="{{ asset('assets/mdb/css/mdb.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/mdbnd/css/mdb.min.css')}}" rel="stylesheet">
     <!-- Custom styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css')}}">
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/mdb/css/initcarousel.css') }}">
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/mdbnd/css/initcarousel.css') }}">
     <!-- Custom styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick/slick.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/slick/slick/slick-theme.css')}}">
@@ -40,7 +40,7 @@
                 <!-- Links -->
                 <ul class="navbar-nav">
                     <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link" href="" data-offset="60">Văn hóa ngọc dung</a>
+                        <a class="nav-link" href="/van-hoa-ngoc-dung" data-offset="60">Văn hóa ngọc dung</a>
                     </li>
                     <li class="nav-item align-items-center d-flex">
                         <a class="nav-link" href="/albums" data-offset="60">Hình ảnh hoạt động</a>
@@ -52,7 +52,7 @@
                 <!-- Links -->
                 <!-- Navbar brand -->
                 <a class="navbar-brand px-lg-4 mr-0" href="/">
-                    <img src="assets/img/logo.png" height="70" alt="">
+                    <img src="{{asset('assets/img/logo.png')}}" height="70" alt="">
                 </a>
                 <!-- Links -->
                 <ul class="navbar-nav">
@@ -62,9 +62,9 @@
                     <li class="nav-item align-items-center d-flex">
                         <a class="nav-link" href="/bai-viet" data-offset="60">Bản tin nội bộ</a>
                     </li>
-                    <li class="nav-item align-items-center d-flex">
-                        <a class="nav-link" href="#contact" data-offset="60">Liên hệ</a>
-                    </li>
+                    {{--<li class="nav-item align-items-center d-flex">--}}
+                        {{--<a class="nav-link" href="#contact" data-offset="60">Liên hệ</a>--}}
+                    {{--</li>--}}
                 </ul>
                 <!-- Links -->
             </div>
@@ -78,7 +78,7 @@
 <!-- Main Navigation -->
 
 <!-- Main Layout -->
-<main>
+<main id="main-head-content">
     @yield('content')
 </main>
 <!-- Main Layout -->
@@ -88,20 +88,20 @@
 <!--/section-footer-->
 <!--  SCRIPTS  -->
 <!-- JQuery -->
-<script type="text/javascript" src="{{ asset('assets/mdb/js/jquery-3.2.1.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/mdbnd/js/jquery-3.2.1.min.js')}}"></script>
 
 <!-- Bootstrap tooltips -->
-<script type="text/javascript" src="{{ asset('assets/mdb/js/popper.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/mdbnd/js/popper.min.js')}}"></script>
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="{{ asset('assets/mdb/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/mdbnd/js/bootstrap.min.js')}}"></script>
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="{{ asset('assets/mdb/js/mdb.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/mdbnd/js/mdb.min.js')}}"></script>
 <!-- Theme JavaScript -->
 <script type="text/javascript" src="{{ asset('assets/js/main.js') }}"></script>
 
 <script type='text/javascript' src='https://amazingcarousel.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 {{--<script type='text/javascript' src='{{ asset('assets/mdb/js/jquery-migrate.min.js') }}/'></script>--}}
-<script type='text/javascript' src='{{ asset('assets/mdb/js/amazingcarousel.js') }}'></script>
+<script type='text/javascript' src='{{ asset('assets/mdbnd/js/amazingcarousel.js') }}'></script>
 {{--<script type='text/javascript' src='{{ asset('assets/mdb/js/wonderpluginlightbox.js') }}'></script>--}}
 {{--<script src="{{ asset('assets/mdb/js/initcarousel.js') }}"></script>--}}
 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>

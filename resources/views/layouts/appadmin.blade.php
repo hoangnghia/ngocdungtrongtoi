@@ -79,6 +79,8 @@
                                     <li><a href="{{url('/album')}}">Danh sách hình ảnh</a></li>
                                     <li><a href="{{url('/video')}}">Danh sách video</a></li>
                                     <li><a href="{{url('/news')}}">Danh sách bài viết</a></li>
+                                    <li><a href="{{url('/feel')}}">Cảm nhận nhân viên</a></li>
+                                    <li><a href="{{url('/culture')}}">Văn hóa Ngọc Dung</a></li>
                                     {{--<li><a href="{{url('/video')}}">Danh sách cảm nhận</a></li>--}}
                                 </ul>
                             </li>

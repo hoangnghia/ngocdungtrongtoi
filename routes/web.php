@@ -108,5 +108,12 @@ Route::get('/chi-tiet-video/{id}', 'Frontend\\GetByVideosController@detail');
 Route::get('/bai-viet', 'Frontend\\NewsController@index');
 Route::get('/chi-tiet-bai-viet/{id}', 'Frontend\\NewsController@detail');
 
+/**
+ * Content
+ */
+Route::get('/user', 'Backend\\UserController@index');
+Route::get('/user/getUser', 'Backend\\UserController@getArrayUser');
+Route::post('/user/postUser', 'Backend\\UserController@postUser');
+
 
 
